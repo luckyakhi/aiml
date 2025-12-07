@@ -12,7 +12,14 @@ emp_data = {
     'Experience_Years': [5, 2, 7, 4, 6]
 }
 employee_df = pd.DataFrame(emp_data)
-print(employee_df)
+#print(employee_df)
 # Get numpy array from the data frame
 employee_array = employee_df.to_numpy()
-print(employee_array)
+#print(employee_array)
+
+#Extract features and label for ML modeling for salary prediction
+X = employee_df[['Experience_Years', 'Department']]
+y = employee_df['Salary']
+
+print(X)
+print(y)
