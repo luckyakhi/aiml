@@ -7,13 +7,13 @@ from sklearn.linear_model import LinearRegression
 # 1. Generate synthetic data (50 employees)
 # Random experience between 1 and 20 years
 np.random.seed(42) # ensures we get same random numbers every time
-X = 20 * np.random.rand(50, 1) 
+X = 20 * np.random.rand(50, 1)  # An 1D array of 50 random numbers between 0 and 20
 
 # Base salary 30k + 4k per year of experience + some random noise
-y = 30000 + (4000 * X) + (np.random.randn(50, 1) * 5000)
+y = 30000 + (4000 * X) + (np.random.randn(50, 1) * 5000) # An 1D array of 50 random numbers for salary
 
 # Convert to DataFrame just so it looks familiar
-df = pd.DataFrame({'Years_Exp': X.flatten(), 'Salary': y.flatten()})
+df = pd.DataFrame({'Years_Exp': X.flatten(), 'Salary': y.flatten()}) # A data frame is row and column of data with keys as column names
 
 # Visualize it
 plt.scatter(df['Years_Exp'], df['Salary'], color='blue')
@@ -26,7 +26,7 @@ plt.show()
 # 1. Split the data (80% training, 20% testing)
 # X_train, y_train: The textbooks the student studies
 # X_test, y_test: The exam questions
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) #Meaning of random_state=42 is that it will always give same result, 42 has no special meaning
 
 # 2. Instantiate the model
 model = LinearRegression()
